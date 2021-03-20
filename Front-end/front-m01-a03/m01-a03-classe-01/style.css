@@ -1,0 +1,87 @@
+body {
+    background-color: #F7F8F7;
+    color: #2C2D29;
+    font-family: cursive, sans-serif;
+}
+
+@font-face {
+    font-family: 'Godzilla';
+    src: url('assets/Godzilla.ttf');
+    font-weight: 400;
+}
+
+.godzilaStyle {
+    font-family: 'Godzilla', monospace;
+}
+
+.card-principal {
+    text-align: center;
+}
+
+.card-principal img {
+    max-height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 0px 3px 8px 0px black;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.card-curiosidades {
+    background-color: #FC4E1E;
+    color: #F7F8F7;
+}
+
+li {
+    text-align: justify;
+    list-style: upper-roman;
+}
+
+.card-musicas {
+    background-color: #FDB350;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.card-musicas, .card-curiosidades {
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 55%;
+    margin: 15px auto;
+}
+
+.card-banda img {
+    border-radius: 3px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    max-height: 150px;
+}
+
+.card-banda p {
+    max-width: 45%;
+    text-align: justify;
+    margin-left: 25px;
+}
+
+.card-banda p, .card-audio p {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.card-audio {
+    margin-top: 15px;
+}

@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+    margin: 24px 70px;
+}
+
+.capa img {
+    width: 500px;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 225, 255);
+    box-shadow: 0px 0px 10px 7px rgb(0, 225, 255);
+    display: block;
+    margin: 32px auto 64px auto;
+}
+
+h1 {
+    font-size: 32px;
+    font-family: 'Lato', sans-serif;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px 7px rgb(0, 225, 255);
+    background-color: rgb(0, 225, 255);
+    display: block;
+    margin-bottom: 48px;
+}
+
+.main {
+    display: flex;
+    margin: 24px 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.biografia, .why {
+    width: 700px;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    width: 100px;
+}
+
+.lista {
+   margin-left: 50px;  
+}
+
+ol { 
+    counter-reset: item;
+    list-style-type: none;
+}
+ 
+li {
+    margin-bottom: 20px;
+}
+
+li span {
+    display: inline-block;
+    margin: auto 8px;
+}

@@ -1,0 +1,38 @@
+.bg-black {
+    background-color: black;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white, .cer1 {
+    color: white;
+}
+
+.text-red, .cer2 {
+    color: red;
+}
+
+.text-yellow, .cer3 {
+    color: yellow;
+}
+
+.text-green, .cer4 {
+    color: green;
+}
+
+.text-blue, .cer5 {
+    color: blue;
+}
+
+.text-violet, .cer6 {
+    color: violet;
+}
+
+.bg-white {
+    background-color: white;
+}
+.monospace {
+    font-family: monospace;
+}

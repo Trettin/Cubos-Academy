@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(170, 16, 241);
+    margin: 24px 70px;
+}
+
+.capa img {
+    width: 500px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 0, 157);
+    box-shadow: 0px 0px 10px 7px rgb(255, 0, 157);
+    display: block;
+    margin: 32px auto 64px auto;
+}
+
+h1 {
+    font-size: 48px;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 7px rgb(255, 0, 157);
+    background-color: rgb(255, 0, 157);
+    display: block;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    margin: 24px 0;
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+}
+
+.biografia, .why {
+    width: 700px;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    width: 100px;
+}
+
+.lista {
+   margin-left: 50px;
+     
+}
+
+ol { 
+    counter-reset: item;
+    list-style-type: none;
+}
+ 
+li {
+    margin-bottom: 20px;
+}
+
+li span {
+    display: inline-block;
+    margin: auto 8px;
+}
+
+li img {
+    border-radius:5%;
+}

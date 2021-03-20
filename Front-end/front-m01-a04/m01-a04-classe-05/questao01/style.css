@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header {
+    margin: 6px;
+    background-color: #03A1FF;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.container {
+	display: flex;
+}
+
+.menuLateral {
+    flex-grow: 1;
+    margin: 6px;
+    background-color: #03A1FF;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.conteudo {
+    background-color: #EF5FA7;
+    flex-grow: 4;
+    margin: 6px;
+    gap: 16px;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer {
+    background-color: #60D837;
+    margin: 6px;
+    text-align: center;
+}
+
+.item {
+	background-color: #f7941f;
+    max-width: 150px;
+    max-height: 300px;
+    min-height: 200px;
+    flex-direction: column;
+}
+
+.item1 {
+    flex-grow: 4;
+}
+
+.fim {
+    flex-grow: 1;
+    min-height: 20px;
+    background-color: black;
+}
+
+.conteudoCards {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    margin: auto 1px;
+}
