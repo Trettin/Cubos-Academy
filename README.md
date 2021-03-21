@@ -1,10 +1,8 @@
 ![](https://i.imgur.com/xG74tOh.png)
 
-# Curso Programação do Zero - Cubos Academy
+# [Curso Programação do Zero - Cubos Academy](https://cubos.academy/cursos/programacao-do-zero/)
 
 Olá, me chamo Gabriel Trettin e esse é meu repositório referente ao conteúdo estudado e produzido ao longo do curso programação do zero. 
-
-https://cubos.academy/cursos/programacao-do-zero/
 
 Temos duas grandes pastas:
 
