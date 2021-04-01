@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    font-family: 'Bai Jamjuree', sans-serif;
+
+}
+
+body {
+    margin: 0;
+    background: url(images/bg-header-desktop.png) no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin: 128px auto 56px auto;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: -0.75px;
+    color: #4C545C;
+}
+
+.subh1 {
+    width: 730px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #9EABB2;
+    margin: 16px auto 48px auto;
+}
+
+.downloadButtons {
+    display: flex;
+    align-self: center;
+    gap: 16px;
+    margin-bottom: 150px;
+}
+
+button {
+    width: 227px;
+    height: 56px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    border-radius: 28px;
+
+}
+
+button:focus {
+    outline: none;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.downIos {
+    background-color: #26BBA4;
+    box-shadow: 0px 10px 20px rgba(137, 229, 199, 0.503305), inset 0px -3px 0px rgba(0, 0, 0, 0.151333);
+}
+
+.downIos:hover, .downMac:hover {
+    opacity: 80%;
+}
+
+.downMac {
+    background: #6174FF;
+    box-shadow: 0px 10px 20px rgba(129, 194, 255, 0.5), inset 0px -3px 0px rgba(0, 0, 0, 0.151333);
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: -0.586957px;
+    color: #4C545C;
+    margin-bottom: 19px;
+}
+
+.subh2 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.135px;
+    color: #9EABB2;
+    width: 730px;
+    align-self: center;
+    margin-bottom: 80px;
+}
+
+.firstContent {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content 350px;
+    gap: 110px;
+    margin-bottom: 150px;
+
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.391304px;
+    color: #4C545C;
+    margin-bottom: 8px;
+}
+
+.firstContent p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.12px;
+    color: #9EABB2;
+}
+
+.fOneContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.pSecondh2 {
+    margin-bottom: 110px;
+}
+
+.devices {
+    align-self: center;
+    box-shadow: 0px 20px 20px -20px black;
+    margin-bottom: 161px;
+}
+
+.pThirdh2 {
+    margin-bottom: 72px;
+}
+
+.ferramentas {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 30px;
+    grid-template-columns: 350px 350px 350px;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.item {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 80px 46px 90px;
+}
+
+.item img {
+    justify-self: center;
+}
+
+.item p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.12px;
+    color: #9EABB2;
+}
+
+.empresas {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 95px;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+footer {
+    height: 150px;
+    background-color: rgba(158,171,178, 0.1);
+    display: grid;
+    grid-auto-flow: column;
+    gap: 135px;
+    justify-content: center;
+    align-content: center;
+}
+
+.menu {
+    display: grid;
+    grid-template-areas: 
+    "logo faq politica instalacao"
+    "logo contato kit .";
+    column-gap: 30px;
+    grid-template-columns: 160px minmax(160px, max-content) minmax(160px, max-content) minmax(160px, max-content);
+    align-items: center;
+}
+
+.menu p {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.135px;
+    color: #4C545C;
+}
+
+.menu p:hover {
+    color: #26BBA4;
+}
+
+.midias {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 24px;
+    align-self: center;
+    justify-content: center;
+}
+
+.midias a:hover path {
+    fill: #26BBA4;
+}
+
+.logoFooter {
+    grid-area: logo;
+}
+
+.logoFooter img {
+    width: 55px;
+    height: 55px;
+    align-self: center;
+}
+
+.faq {
+    grid-area: faq;
+}
+
+.politica {
+    grid-area: politica;
+}
+
+.instalacao {
+    grid-area: instalacao;
+}
+
+.contato {
+    grid-area: contato;
+}
+
+.kit {
+    grid-area: kit;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+

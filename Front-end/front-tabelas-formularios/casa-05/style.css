@@ -1,0 +1,55 @@
+/* 
+font-family: 'Kalam', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Nanum Pen Script', cursive;
+*/
+
+body {
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Kalam', cursive;
+    padding: 32px 120px;
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    color: rgb(235, 235, 235);
+    align-self: center;
+    font-size: 48px;
+}
+
+table {
+    color: rgb(235, 235, 235);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    margin: 24px 0px;
+    border-style: hidden;
+    font-family: 'Kalam', cursive;
+    font-size: 24px;
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid white; 
+
+}
+table tr:first-child {
+    border-top: 0px;
+}
+
+h2 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 36px;
+    align-self: center;
+}
+
+p {
+    font-size: 20px;
+}

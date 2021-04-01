@@ -1,0 +1,89 @@
+body {
+    background-color: black;
+}
+
+.pai {
+    height: 800px;
+    width: 1440px;
+    background-color: white;
+    position: relative;
+}
+
+.background {
+    position: relative;
+    height: 800px;
+    width: 1440px;
+}
+
+.padrao1 {
+    position: absolute;
+    top: 50px;
+    right: 73px;
+}
+
+.padrao2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.padrao3 {
+    position: absolute;
+    top: 214px;
+    left: 260px;
+}
+
+.foto {
+    position: absolute;
+    z-index: 1;
+    top: 113px;
+    right: 165px;
+    box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495001);
+    border-radius: 5px;
+}
+
+.conteudo {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    left: 165px;
+    top: 278px;
+    font-family: 'Inter', sans-serif;
+    max-width: 635px;
+    height: 290px;
+}
+
+.principal {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 44px;
+    margin: 0;
+    position: relative;
+    color: #202047;
+}
+
+.rodape1 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 38px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: #202047;
+    margin: 0px;
+}
+
+.rodape2 {
+    color: #B9B9CE;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 38px;
+    position: absolute;
+    bottom: 0px;
+    left: 221.22px;
+    margin: 0px;
+
+}
+
+
+
