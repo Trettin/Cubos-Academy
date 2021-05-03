@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    ul {
+        padding: 0;
+    }
+    
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+   
+    <input type="text" id="txtFiltro" placeholder="Busca">
+    <ul class="produtos">
+        <li class="pizza">Pizza de calabresa</li>
+        <li class="hamburguer">X-burguer</li>
+        <li class="pizza">Pizza de frango com catupiry</li>
+        <li class="arabe">Esfirra</li>
+        <li class="japonesa">Temaki</li>
+        <li class="hamburguer">X-Salada</li>
+        <li class="japonesa">Sushi</li>
+        <li class="arabe">Shwarma</li>
+    </ul>
+
+
+</body>
+<script>
+    const txtFiltro = document.querySelector("#txtFiltro");
+    const li = document.querySelectorAll("li")
+    
+    txtFiltro.addEventListener('input', filtro);
+
+    function filtro({target:{value}}) {
+        li.forEach(item => {
+            if (item.className.includes(value) || item.innerText.toLowerCase().includes(value)){
+                item.style = "display: list-item"
+            } else {
+                item.style = "display: none"
+            }
+        })
+        
+    };
+   
+</script>
+</html>

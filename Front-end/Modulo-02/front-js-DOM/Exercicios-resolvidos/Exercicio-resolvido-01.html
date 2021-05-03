@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    
+    <h1>Olá, me chamo <span class="nome"></span> , prazer em conhecê-lo!</h1>
+    <p>Eu tenho <span class="idade"></span> anos e moro em <span class="cidade"></span>/<span class="estado"></span> e no meu tempo livre gosto de <span class="lazer"></span></p>
+
+    
+
+</body>
+
+<script>
+
+    // Código feito antes da correção
+
+    // const nomePrompt = prompt("Qual o seu nome?")
+    // const idadePrompt = prompt("Qual a sua idade?")
+    // const cidadePrompt = prompt("Em qual cidade você mora?")
+    // const estadoPrompt = prompt("Em qual estado você mora?")
+    // const lazerPrompt = prompt("No seu tempo livre, você gosta de?")
+
+    // const nome = document.querySelector('.nome')
+    // nome.textContent += nomePrompt;
+
+    // const idade = document.querySelector('.idade')
+    // idade.textContent += idadePrompt;
+
+    // const cidade = document.querySelector('.cidade')
+    // cidade.textContent += cidadePrompt;
+
+    // const estado = document.querySelector('.estado')
+    // estado.textContent += estadoPrompt;
+
+    // const lazer = document.querySelector('.lazer')
+    // lazer.textContent += lazerPrompt;
+
+    // Código feito depois da correção
+
+    const nome = document.querySelector('.nome')
+    const idade = document.querySelector('.idade')
+    const cidade = document.querySelector('.cidade')
+    const estado = document.querySelector('.estado')
+    const lazer = document.querySelector('.lazer')
+
+    nome.innerText = prompt("Qual o seu nome?")
+    idade.innerText = prompt("Qual a sua idade?")
+    cidade.innerText = prompt("Em qual cidade você mora?")
+    estado.innerText = prompt("Em qual estado você mora?")
+    lazer.innerText = prompt("No seu tempo livre, você gosta de?")
+
+</script>
+
+</html>

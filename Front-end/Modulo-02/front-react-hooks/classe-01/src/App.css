@@ -1,0 +1,72 @@
+.task-handler {
+    width: 540px;
+}
+
+h1 {
+    margin: 70px 0px 40px 0px;
+}
+
+.nova-tarefa {
+    border-radius: 5px;
+}
+
+.nova-tarefa, .tarefa {
+    background-color: white;
+    width: 100%;    
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+input[type=checkbox] {
+    width: min-content;
+    margin-right: 27px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
+.nova-tarefa .task {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+}
+.nova-tarefa .task:focus {
+    outline: none;
+}
+
+.content {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: 70px;
+}
+
+ul {
+    padding: 0;
+}
+
+.tarefa {
+    list-style: none;
+    margin: 0;
+}
+
+.tarefas-rodape {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px
+}
+
+button {
+    background: unset;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.completado {
+    display: none;
+}

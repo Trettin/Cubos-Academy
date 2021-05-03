@@ -1,0 +1,15 @@
+.filtro-container {
+    display: flex; 
+    gap: 5px;
+}
+
+.filtro {
+    all: unset;
+    cursor: pointer;
+    color: #9495A5;
+    font-weight: 700;
+}
+
+.filtro-ativo {
+    color: #3A7CFD;
+}

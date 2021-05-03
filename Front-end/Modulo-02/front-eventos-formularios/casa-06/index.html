@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de professores</title>
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+      .erro {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <input type="number" id="prof">
+    <img src="" alt="">
+    <h1></h1>
+    <p></p>
+    <span class="erro">Nenhum professor encontrado...</span>
+
+
+  </body>
+
+  <script>
+    const basePath = './assets/';
+
+    const professores = [{
+      id: 1,
+      name: 'Leonardo',
+      stack: 'Back-end',
+      avatar: `${basePath}leo.jfif`
+    }, {
+      id: 2,
+      name: 'Guido',
+      stack: 'Fullstack',
+      avatar: `${basePath}guido.png`
+    }, {
+      id: 3,
+      name: 'Dina',
+      stack: 'Fullstack',
+      avatar: `${basePath}dina.jfif`
+    }, {
+      id: 4,
+      name: 'Daniel',
+      stack: 'Fullstack',
+      avatar: `${basePath}dani.png`
+    }, {
+      id: 5,
+      name: 'Vitinho',
+      stack: 'Frontend',
+      avatar: `${basePath}vitinho.png`
+    }, {
+      id: 6,
+      name: 'Juninho',
+      stack: 'Backend',
+      avatar: `${basePath}juninho.jfif`
+    }]
+  
+    const id = document.querySelector("#prof");
+    const img = document.querySelector("img");
+    const titulo = document.querySelector("h1");
+    const descricao = document.querySelector("p");
+    const erro = document.querySelector("span");
+
+    id.addEventListener('blur', ({target:{value}}) => {
+      console.log(professores.length)
+      if (value >= 0 && value < professores.length) {
+        titulo.innerText = professores[value].name;
+        descricao.innerText = professores[value].stack;
+        img.src = professores[value].avatar;
+        erro.classList.add("erro");
+        return;
+      } else {
+        titulo.innerText = "";
+        descricao.innerText = "";
+        img.src = "";
+        erro.classList.remove("erro");
+        return;
+      }
+    })
+
+
+   
+  </script>
+
+</html>

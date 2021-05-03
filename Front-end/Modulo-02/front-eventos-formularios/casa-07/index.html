@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperatura</title>
+  </head>
+
+  <body>
+    <div class="primeiro">
+      <input type="number" class="txtGrau">
+      <select class="drpTemperaturas" id="drpPrimeiro">
+        <option value="Celsius" selected>Celsius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+      </select>
+    </div>
+    <div class="segundo">
+      <input type="number" class="txtGrau">
+      <select class="drpTemperaturas" id="drpSegundo">
+        <option value="Celsius">Celsius</option>
+        <option value="Fahrenheit" selected>Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+      </select>
+    </div>
+  </body>
+
+  <script>
+
+    const input1 = document.querySelector(".primeiro>.txtGrau");
+    const input2 = document.querySelector(".segundo>.txtGrau");
+    const escala1 = document.querySelector("#drpPrimeiro");
+    const escala2 = document.querySelector("#drpSegundo");
+
+    // Escuta o input 1 e faz as chamadas para atualizar o input 2 de acordo com opção selecionada.
+    input1.addEventListener('input', ({target:{value:valor1}}) => {
+      if (escala1.value === "Celsius" && escala2.value === "Fahrenheit") { // celsiu to fahrenheit
+        input2.value = celsiusToFahrenheit(valor1);
+      } else if (escala1.value === "Celsius" && escala2.value === "Kelvin") { //celsius to kelvin
+        input2.value = celsiusToKelvin(valor1);
+      } else if (escala1.value === "Fahrenheit" && escala2.value === "Celsius") { //fahrenheit to celsius
+        input2.value = fahrenheitToCelsius(valor1);
+      } else if (escala1.value === "Fahrenheit" && escala2.value === "Kelvin") { // fahrenheit to kelvin
+        input2.value = fahrenheitToKelvin(valor1);
+      } else if (escala1.value === "Kelvin" && escala2.value === "Celsius") { // kelvin to celsius
+        input2.value = kelvinToCelsius(valor1);
+      } else if (escala1.value === "Kelvin" && escala2.value === "Fahrenheit") { // Kelvin to fahrenheit
+        input2.value = kelvinToFahrenheit(valor1);
+      } else if (escala1.value === "Kelvin" && escala2.value === "Kelvin" || escala1.value === "Celsius" && escala2.value === "Celsius" || escala1.value === "Fahrenheit" && escala2.value === "Fahrenheit") { 
+        input2.value = input1.value; // Se as escalas forem a mesma iguale o valor
+      }
+    });
+
+     // Escuta o input 2 e faz as chamadas para atualizar o input 1 de acordo com opção selecionada.
+    input2.addEventListener('input', ({target:{value:valor2}}) => {
+      if (escala2.value === "Fahrenheit" && escala1.value === "Celsius") { // fahrenheit to celsius
+        input1.value = fahrenheitToCelsius(valor2);
+      } else if (escala2.value === "Fahrenheit" && escala1.value === "Kelvin") { // fahrenheit to kelvin
+        input1.value = fahrenheitToKelvin(valor2);
+      } else if(escala2.value === "Celsius" && escala1.value === "Fahrenheit") { // celsius to fahrenheit
+        input1.value = celsiusToFahrenheit(valor2);
+      } else if (escala2.value === "Celsius" && escala1.value === "Kelvin") { // celsius to kelvin
+        input1.value = celsiusToKelvin(valor2);
+      } else if (escala2.value === "Kelvin" && escala1.value === "Celsius") { // kelvin to celsius
+        input1.value = kelvinToCelsius(valor2);
+      } else if (escala2.value === "Kelvin" && escala1.value === "Fahrenheit") {
+        input1.value = kelvinToFahrenheit(valor2);
+      } else if (escala1.value === "Kelvin" && escala2.value === "Kelvin" || escala1.value === "Celsius" && escala2.value === "Celsius" || escala1.value === "Fahrenheit" && escala2.value === "Fahrenheit") { 
+        input1.value = input2.value; // Se as escalas forem a mesma iguale o valor
+      }
+    });
+
+    //formulas de conversão de temperatura
+    function celsiusToFahrenheit(input) { return (input *(9/5))+32}
+    function fahrenheitToCelsius(input) { return (input-32)* 5/9}
+    function celsiusToKelvin(input){ return Number(input) + 273.15 }
+    function kelvinToCelsius(input) { return input - 273.15 };
+    function fahrenheitToKelvin(input) { return (input - 32) * (5/9) + 273.15 }
+    function kelvinToFahrenheit(input) { return (input - 273.15) * (9/5) + 32 }
+
+  </script>
+
+</html>

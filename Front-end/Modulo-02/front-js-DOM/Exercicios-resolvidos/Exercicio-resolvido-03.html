@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<style>
+    body {
+        display: grid;
+        place-content: center;
+        gap: 20px;
+        min-height: 100vh;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    
+    <button onclick="saudacao('dia')" type="button">Bom dia!</button>
+    <button onclick="saudacao('tarde')" type="button">Boa tarde!</button>
+    <button onclick="saudacao('noite')" type="button">Boa noite!</button>
+
+</body>
+
+<script>
+
+    // Código que fiz antes da correção, usando innerText e passando this como argumento na chamada da funcao no onclick.
+
+    // function saudacao(button) {
+    //     if (button.innerText === "Bom dia!") {
+    //         alert("Bom dia!! Aceita um café?")    
+    //     } else if (button.innerText === "Boa tarde!") {
+    //         alert("Boa tarde!! O almoço está na mesa!")
+    //     } else if (button.innerText === "Boa noite!") {
+    //         alert("Boa noite!! Está na hora da janta!")
+    //     }
+    // }
+
+    // Código feito a partir da correção da questão na aula. A correção Dina usou o switch, mas preferi fazer com IF. Ao invés de passar o this passou uma string com o turno como argumento e n precisou do innerText.
+
+    function saudacao(turno) {
+        if (turno === "dia") {
+            alert("Bom dia!! Aceita um café?"); 
+        } else if (turno === "tarde") {
+            alert("Boa tarde!! O almoço está na mesa!")
+        } else if (turno === "noite") {
+            alert("Boa noite!! Está na hora da janta!")
+        } else {
+            alert("Hello!")
+        }
+    }
+
+</script>
+
+</html>
