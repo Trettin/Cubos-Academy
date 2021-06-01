@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* 
+font-family: 'Kumbh Sans', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Space Mono', monospace;
+*/
+
+:root {
+  --laranja: 248, 112, 112;
+  --ciano: 112, 243, 248;
+  --rosa: 216, 129, 248;
+  --cinza-gelo: 215, 224, 255;
+  --azul-escuro: 30, 33, 63;
+  --azul-mais-escuro: 22, 25, 50;
+  --branco: 255, 255, 255;
+  --branco-cinza: 239, 241, 250;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(var(--azul-escuro));
+}

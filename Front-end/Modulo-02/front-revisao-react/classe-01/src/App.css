@@ -1,0 +1,85 @@
+.pomodoro {
+  margin-top: 3rem;
+  color: rgb(var(--branco));
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 3.438rem;
+  margin-bottom: 2.813rem;
+  padding: 0.5rem;
+  background-color: rgb(var(--azul-mais-escuro));
+  border-radius: 2.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
+
+.header-button {
+  border-radius: 2rem;
+  font-size: 0.875em;
+  font-weight: 700;
+  padding: 0.938rem 1.563rem;
+  color: rgba(var(--cinza-gelo), 0.4);
+}
+
+.selected {
+  background-color: rgb(var(--laranja));
+  color: rgb(var(--azul-escuro));
+}
+
+.clock {
+  width: 25.625rem;
+  height: 25.625rem;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  margin-bottom: 3.938rem;
+}
+
+.clock-bg {
+  background-color: rgb(var(--azul-mais-escuro));
+  width: 23rem;
+  height: 23rem;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+}
+
+.time {
+  color: rgb(var(--cinza-gelo));
+  font-size: 6.25rem;
+  font-weight: bold;
+  letter-spacing: -5px;
+
+  margin-bottom: 1.188rem;
+}
+
+.pause {
+  color: rgb(var(--cinza-gelo));
+  background-color: transparent;
+
+  font-family: "Kumbh Sans", sans-serif;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.938rem;
+}
+
+.config {
+  margin-bottom: 3.5rem;
+}
