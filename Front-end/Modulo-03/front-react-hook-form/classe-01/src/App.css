@@ -1,0 +1,11 @@
+.App {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
