@@ -17,5 +17,9 @@ export default function Error({ errors, errorName }) {
     errorMsg = "O Id do usuário é obrigatório.";
   }
 
-  return errorMsg ? <span style={{ color: "red" }}>{errorMsg}</span> : "";
+  return errorMsg ? (
+    <span style={{ color: "red", fontSize: "0.8rem" }}>{errorMsg}</span>
+  ) : (
+    ""
+  );
 }
