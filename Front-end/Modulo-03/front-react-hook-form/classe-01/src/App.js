@@ -2,26 +2,9 @@ import "./App.css";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Input = React.forwardRef((props, ref) => (
-  <input
-    type={props.type}
-    id={props.id}
-    ref={ref}
-    name={props.name}
-    onChange={props.onChange}
-    onBlur={props.onBlur}
-  />
-));
-
-const InputTextArea = React.forwardRef((props, ref) => (
-  <textarea
-    id={props.id}
-    ref={ref}
-    name={props.name}
-    onChange={props.onChange}
-    onBlur={props.onBlur}
-  />
-));
+import Input from "./components/Input";
+import TextArea from "./components/TextArea";
+import Error from "./components/Error";
 
 function onSubmit(data) {
   return fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -58,7 +41,7 @@ function App() {
         <Error errors={errors} errorName="title" />
 
         <label htmlFor="input-comentary">Comentário</label>
-        <InputTextArea
+        <TextArea
           id="input-comentary"
           {...register("commentary", { required: true, maxLength: 30 })}
         />
