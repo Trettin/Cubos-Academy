@@ -1,48 +1,41 @@
 import "./App.css";
 import React from "react";
-import { useForm } from "react-hook-form";
 
-import Input from "./components/Input";
-import TextArea from "./components/TextArea";
-import Error from "./components/Error";
-
-import onSubmit from "./utils/onSubmit";
+import {
+  NavLink,
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import NewComment from "./pages/NewComment";
 
 function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="input-title">Título</label>
-        <Input
-          id="input-title"
-          type="text"
-          {...register("title", { required: true, minLength: 5 })}
-        />
-        <Error errors={errors} errorName="title" />
-
-        <label htmlFor="input-comentary">Comentário</label>
-        <TextArea
-          id="input-comentary"
-          {...register("commentary", { required: true, maxLength: 30 })}
-        />
-        <Error errors={errors} errorName="commentary" />
-
-        <label htmlFor="userId">Usuário</label>
-        <Input
-          id="userId"
-          type="number"
-          {...register("userId", { required: true })}
-        />
-        <Error errors={errors} errorName="userId" />
-
-        <button type="submit">Enviar</button>
-      </form>
+      <Router>
+        <nav className="menu">
+          <NavLink to="/" exact className="navlink">
+            Home
+          </NavLink>
+          <NavLink to="/post" className="navlink">
+            New Comment
+          </NavLink>
+          <NavLink to="/get" className="navlink">
+            Find Comment
+          </NavLink>
+          <NavLink to="/put" className="navlink">
+            Update Comment
+          </NavLink>
+          <NavLink to="/delete" className="navlink">
+            Delete Comment
+          </NavLink>
+        </nav>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/post" component={NewComment} />
+        </Switch>
+      </Router>
     </div>
   );
 }
