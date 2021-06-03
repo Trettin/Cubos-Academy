@@ -1,11 +1,38 @@
 .App {
+  height: 100vh;
   display: grid;
   place-content: center;
-  height: 100vh;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  position: absolute;
+  width: 100%;
+}
+
+.navlink {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  text-decoration: underline;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 2rem;
+  align-self: center;
+
+  width: 15rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }
