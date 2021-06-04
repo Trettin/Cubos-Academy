@@ -9,7 +9,24 @@ const listarUsuarios = async (req, res) => {
   }
 };
 
-const obterUsuario = async (req, res) => {};
+const obterUsuario = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const usuario = await conexao.query(
+      "select * from usuarios where id = $1",
+      [id]
+    );
+
+    if (usuario.rowCount === 0) {
+      return res.status(404).json("Usuario não encontrado");
+    }
+
+    return res.status(200).json(usuario.rows[0]);
+  } catch (error) {
+    return res.status(400).json(error.message);
+  }
+};
 
 const cadastrarUsuario = async (req, res) => {
   const { nome, idade, email, telefone, cpf } = req.body;
