@@ -112,7 +112,31 @@ const atualizarUsuario = async (req, res) => {
   }
 };
 
-const excluirUsuario = async (req, res) => {};
+const excluirUsuario = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const usuario = await conexao.query(
+      "select * from usuarios where id = $1",
+      [id]
+    );
+
+    if (usuario.rowCount === 0) {
+      return res.status(404).json("Usuario não encontrado");
+    }
+
+    const query = "delete from usuarios where id = $1";
+    const usuarioExcluido = await conexao.query(query, [id]);
+
+    if (usuarioExcluido.rowCount === 0) {
+      return res.status(404).json("Não foi possível excluir o usuario");
+    }
+
+    return res.status(200).json("Usuário foi excluido com sucesso.");
+  } catch (error) {
+    return res.status(400).json(error.message);
+  }
+};
 
 module.exports = {
   listarUsuarios,
