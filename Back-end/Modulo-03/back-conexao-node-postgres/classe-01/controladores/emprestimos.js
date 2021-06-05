@@ -2,9 +2,9 @@ const conexao = require("../conexao");
 
 const listarEmprestimos = async (req, res) => {
   try {
-    const { rows: emprestimos } = await conexao.query(
-      "select * from emprestimos"
-    );
+    const query =
+      "select a.id, b.nome as usuario, b.telefone, b.email, c.nome as livro, a.status from emprestimos a join usuarios b on a.usuario_id = b.id join livros c on a.livro_id = c.id";
+    const { rows: emprestimos } = await conexao.query(query);
     return res.status(200).json(emprestimos);
   } catch (error) {
     return res.status(400).json(error.message);
