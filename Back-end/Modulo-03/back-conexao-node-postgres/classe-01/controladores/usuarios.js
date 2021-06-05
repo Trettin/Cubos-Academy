@@ -140,6 +140,19 @@ const excluirUsuario = async (req, res) => {
       return res.status(404).json("Usuario não encontrado");
     }
 
+    const { rows: emprestimos } = await conexao.query(
+      "select * from emprestimos where usuario_id = $1",
+      [id]
+    );
+
+    for (const emprestimo of emprestimos) {
+      if (emprestimo.status === "pendente") {
+        return res
+          .status(400)
+          .json("Não é possível excluir um usuário com livros pendentes.");
+      }
+    }
+
     const query = "delete from usuarios where id = $1";
     const usuarioExcluido = await conexao.query(query, [id]);
 
