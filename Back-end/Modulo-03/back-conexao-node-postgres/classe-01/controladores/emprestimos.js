@@ -15,10 +15,9 @@ const consultarEmprestimo = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const emprestimo = await conexao.query(
-      "select * from emprestimos where id = $1",
-      [id]
-    );
+    const query =
+      "select a.id, b.nome as usuario, b.telefone, b.email, c.nome as livro, a.status from emprestimos a join usuarios b on a.usuario_id = b.id join livros c on a.livro_id = c.id where a.id = $1";
+    const emprestimo = await conexao.query(query, [id]);
 
     if (emprestimo.rowCount === 0) {
       return res.status(404).json("Empréstimo não encontrado");
