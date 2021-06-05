@@ -3,6 +3,15 @@ const conexao = require("../conexao");
 const listarUsuarios = async (req, res) => {
   try {
     const { rows: usuarios } = await conexao.query("select * from usuarios");
+
+    for (const usuario of usuarios) {
+      const { rows: livros } = await conexao.query(
+        "select * from emprestimos where usuario_id = $1",
+        [usuario.id]
+      );
+      usuario.emprestimos = livros;
+    }
+
     return res.status(200).json(usuarios);
   } catch (error) {
     return res.status(400).json(error.message);
