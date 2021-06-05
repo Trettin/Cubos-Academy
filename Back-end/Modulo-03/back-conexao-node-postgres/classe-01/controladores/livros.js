@@ -98,20 +98,18 @@ const excluirLivro = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const queryEmprestimos = "select * from emprestimos";
-    const { rows: emprestimos } = await conexao.query(queryEmprestimos);
+    const queryEmprestimos = "select * from emprestimos where livro_id = $1";
+    const { rowCount: existeRegistroDeEmprestimos } = await conexao.query(
+      queryEmprestimos,
+      [id]
+    );
 
-    for (const emprestimo of emprestimos) {
-      if (
-        emprestimo.livro_id === Number(id) &&
-        emprestimo.status === "pendente"
-      ) {
-        return res
-          .status(400)
-          .json(
-            "Antes de excluir o livro é necessário retornar o empréstimo do mesmo."
-          );
-      }
+    if (existeRegistroDeEmprestimos) {
+      return res
+        .status(400)
+        .json(
+          "Não é possível excluir um livro que tem histórico de empréstimos."
+        );
     }
 
     const livro = await conexao.query("select * from livros where id = $1", [
@@ -120,19 +118,6 @@ const excluirLivro = async (req, res) => {
 
     if (livro.rowCount === 0) {
       return res.status(404).json("Livro não encontrado.");
-    }
-
-    const setEmprestimoLivroIdNull =
-      "delete from emprestimos where livro_id = $1";
-    const atualizarEmprestimos = await conexao.query(setEmprestimoLivroIdNull, [
-      id,
-    ]);
-    if (atualizarEmprestimos.rowCount === 0) {
-      return res
-        .status(500)
-        .json(
-          "Não foi possível excluir o os registros de empréstimos necessários para exclusão do livro"
-        );
     }
 
     const query = "delete from livros where id = $1";
