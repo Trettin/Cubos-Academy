@@ -31,6 +31,12 @@ const obterUsuario = async (req, res) => {
       return res.status(404).json("Usuario não encontrado");
     }
 
+    const { rows: livros } = await conexao.query(
+      "select * from emprestimos where usuario_id = $1",
+      [id]
+    );
+    usuario.rows[0].emprestimos = livros;
+
     return res.status(200).json(usuario.rows[0]);
   } catch (error) {
     return res.status(400).json(error.message);
