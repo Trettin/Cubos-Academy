@@ -1,6 +1,6 @@
 import Input from "../components/Input";
 import Error from "../components/Error";
-import Commentary from "../components/Commentary";
+import Commentary from "../components/Commentary/Commentary";
 
 import { useForm } from "react-hook-form";
 
