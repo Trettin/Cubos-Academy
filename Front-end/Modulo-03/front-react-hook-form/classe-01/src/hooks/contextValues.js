@@ -69,9 +69,11 @@ export default function useContextStates() {
     newCommentResponse,
     findCommentResponse,
     deleteResponse,
+    updateResponse,
     onSubmitPost,
     setNewCommentResponse,
     onSubmitGet,
+    setFindCommentResponse,
     onSubmitDelete,
     onSubmitUpdate,
   };
