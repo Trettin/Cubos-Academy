@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import NewComment from "./pages/NewComment";
 import FindComment from "./pages/FindComment";
 import DeleteComment from "./pages/DeleteComment";
+import UpdateComment from "./pages/UpdateComment";
 
 import ContextProvider from "./context/responseStateProvider";
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/post" component={NewComment} />
             <Route path="/get" component={FindComment} />
             <Route path="/delete" component={DeleteComment} />
+            <Route path="/put" component={UpdateComment} />
           </Switch>
         </Router>
       </ContextProvider>
