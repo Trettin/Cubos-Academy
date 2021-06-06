@@ -25,6 +25,7 @@ export default function NewComment() {
       userId: "",
     });
   }
+
   return (
     <div>
       {newCommentResponse ? (
