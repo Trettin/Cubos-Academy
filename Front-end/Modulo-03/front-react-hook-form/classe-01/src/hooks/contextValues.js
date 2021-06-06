@@ -77,5 +77,6 @@ export default function useContextStates() {
     onSubmitDelete,
     onSubmitUpdate,
     setUpdateResponse,
+    setDeleteResponse,
   };
 }
