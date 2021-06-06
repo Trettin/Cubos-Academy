@@ -11,14 +11,26 @@ export default function FindComment() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const { onSubmitGet, findCommentResponse } = useContextStates();
+  const { onSubmitGet, findCommentResponse, setFindCommentResponse } =
+    useContextStates();
+
+  function resetFindComment() {
+    setFindCommentResponse({});
+    reset({
+      findId: "",
+    });
+  }
 
   return (
     <div>
       {findCommentResponse.title ? (
-        <Commentary content={findCommentResponse} />
+        <Commentary
+          content={findCommentResponse}
+          resetFindComment={() => resetFindComment()}
+        />
       ) : (
         <form onSubmit={handleSubmit((data) => onSubmitGet(data))}>
           <label htmlFor="input-findComment">
