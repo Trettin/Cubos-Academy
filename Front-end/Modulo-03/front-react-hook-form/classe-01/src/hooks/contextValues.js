@@ -4,6 +4,7 @@ export default function useContextStates() {
   const [newCommentResponse, setNewCommentResponse] = useState();
   const [findCommentResponse, setFindCommentResponse] = useState({});
   const [deleteResponse, setDeleteResponse] = useState(false);
+  const [updateResponse, setUpdateResponse] = useState(false);
 
   const onSubmitPost = async (data) => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -42,7 +43,27 @@ export default function useContextStates() {
     }
   };
 
-  const onSubmitUpdate = async (data) => {};
+  const onSubmitUpdate = async (data) => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/posts/${data.commentId}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          id: data.commentId,
+          title: data.title,
+          body: data.commentary,
+          userId: data.userId,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    );
+    console.log(response);
+    if (response.status === 201) {
+      setUpdateResponse(true);
+    }
+  };
 
   return {
     newCommentResponse,
