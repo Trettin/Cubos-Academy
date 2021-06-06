@@ -8,6 +8,7 @@ const Input = React.forwardRef((props, ref) => (
     name={props.name}
     onChange={props.onChange}
     onBlur={props.onBlur}
+    min={1}
   />
 ));
 
