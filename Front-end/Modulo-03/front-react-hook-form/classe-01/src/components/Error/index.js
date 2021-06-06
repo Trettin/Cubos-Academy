@@ -1,20 +1,27 @@
 export default function Error({ errors, errorName }) {
   let errorMsg = "";
 
-  if (errors.title?.type === "required" && errorName === "title") {
-    errorMsg = "O título é obrigatório.";
+  if (errors.title?.type === "required" && errorName === "mandatory") {
+    errorMsg = "The title is mandatory.";
   }
   if (errors.title?.type === "minLength" && errorName === "title") {
-    errorMsg = "O título deve ter no mínimo cinco letras.";
+    errorMsg = "The title must have at least five characters.";
   }
   if (errors.commentary?.type === "required" && errorName === "commentary") {
-    errorMsg = "Escreva seu comentário";
+    errorMsg =
+      "Please, write your commentary. We can't post a blank commentary.";
   }
   if (errors.commentary?.type === "maxLength" && errorName === "commentary") {
-    errorMsg = "Seu comentário deve ter no máximo 30 caracteres.";
+    errorMsg = "Your comment must have a maxium of thirty characters.";
   }
   if (errors.userId?.type === "required" && errorName === "userId") {
-    errorMsg = "O Id do usuário é obrigatório.";
+    errorMsg = "The user id is mandatory.";
+  }
+  if (errors.findId?.type === "required" && errorName === "commentId") {
+    errorMsg = "The commentary id is mandatory.";
+  }
+  if (errors.delete?.type === "required" && errorName === "delete") {
+    errorMsg = "The commentary id is mandatory.";
   }
 
   return errorMsg ? (
