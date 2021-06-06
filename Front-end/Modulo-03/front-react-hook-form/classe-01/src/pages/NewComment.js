@@ -4,7 +4,7 @@ import Error from "../components/Error";
 
 import { useForm } from "react-hook-form";
 
-import onSubmit from "../utils/onSubmit";
+import useContextStates from "../hooks/useContextStates";
 
 export default function NewComment() {
   const {
@@ -13,20 +13,23 @@ export default function NewComment() {
     formState: { errors },
   } = useForm();
 
+  const { onSubmitPost, newCommentResponse } = useContextStates();
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit((data) => onSubmitPost(data))}>
       <label htmlFor="input-title">
-        Título
+        Title
         <Input
           id="input-title"
           type="text"
           {...register("title", { required: true, minLength: 5 })}
         />
+        <Error errors={errors} errorName="mandatory" />
         <Error errors={errors} errorName="title" />
       </label>
 
       <label htmlFor="input-comentary">
-        Comentário
+        Commentary
         <TextArea
           id="input-comentary"
           {...register("commentary", { required: true, maxLength: 30 })}
@@ -35,7 +38,7 @@ export default function NewComment() {
       </label>
 
       <label htmlFor="userId">
-        Usuário
+        User id
         <Input
           id="userId"
           type="number"
@@ -44,7 +47,11 @@ export default function NewComment() {
         <Error errors={errors} errorName="userId" />
       </label>
 
-      <button type="submit">Enviar</button>
+      <button type="submit">Send</button>
+
+      {newCommentResponse && (
+        <span style={{ color: "green" }}>Comment received!</span>
+      )}
     </form>
   );
 }
