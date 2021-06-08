@@ -1,31 +1,32 @@
 import useStyles from "./style";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import useContextStates from "../../hooks/useContextStates";
+import CustomAlert from "../CustomAlert";
 
 export default function PokeSearch() {
   const classes = useStyles();
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/Bulbasaur`);
-    const pokemon = await response.json();
-  }
+  const { handleFindPokemon, open, inputValue, setInputValue } =
+    useContextStates();
 
   return (
     <form
       className={classes.root}
       noValidate
       autoComplete="off"
-      onSubmit={(e) => handleSubmit(e)}
+      onSubmit={(e) => handleFindPokemon(e, inputValue)}
     >
       <TextField
         id="outlined-basic"
         label="Search new pokemon"
         variant="outlined"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       />
-      <Button variant="contained" color="primary" type="submit">
+      <Button variant="contained" color="secondary" type="submit">
         SEARCH
       </Button>
+      {open && <CustomAlert />}
     </form>
   );
 }

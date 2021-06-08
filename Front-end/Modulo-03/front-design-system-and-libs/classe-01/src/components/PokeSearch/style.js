@@ -5,7 +5,10 @@ export default makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
       width: "100%",
-      margin: "0.5rem 0",
+      marginTop: "0.75rem",
+      marginBottom: "0.75rem",
+      marginRight: 0,
+      marginLeft: 0,
       display: "flex",
       flexDirection: "column",
     },
