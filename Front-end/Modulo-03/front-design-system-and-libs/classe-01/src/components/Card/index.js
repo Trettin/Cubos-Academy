@@ -4,24 +4,35 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import useContextStates from "../../hooks/useContextStates";
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
+  const { pokemon } = useContextStates();
 
   return (
     <Card className={classes.root}>
-      <CardHeader title="pokemon name" />
+      <CardHeader title={pokemon.name} />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={pokemon.image}
+        title="Pokemon image"
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
+      <CardContent className={classes.content}>
+        <Typography>Abilities:</Typography>
+
+        {pokemon.abilities?.map((ability) => {
+          return (
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              key={ability.ability.name}
+            >
+              {ability.ability.name ?? ""}
+            </Typography>
+          );
+        })}
       </CardContent>
     </Card>
   );
