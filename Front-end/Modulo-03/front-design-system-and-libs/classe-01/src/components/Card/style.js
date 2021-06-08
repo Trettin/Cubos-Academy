@@ -6,8 +6,8 @@ export default makeStyles((theme) => ({
     height: "auto",
   },
   media: {
-    height: "auto",
-    paddingTop: "100%", // 16:9
+    paddingTop: "100%",
+    backgroundSize: "contain",
   },
   content: {
     textAlign: "left",
