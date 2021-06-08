@@ -4,7 +4,10 @@ export default makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: "100%",
+      margin: "0.5rem 0",
+      display: "flex",
+      flexDirection: "column",
     },
   },
 }));
