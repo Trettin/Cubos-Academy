@@ -7,7 +7,7 @@ const rotas = express();
 rotas.get("/pokemons", pokemons.listarpokemons);
 rotas.get("/pokemons/:id", pokemons.consultarPokemon);
 rotas.post("/pokemons", pokemons.cadastrarPokemon);
-rotas.put("/pokemons/:id", pokemons.atualizarPokemon);
+rotas.patch("/pokemons/:id", pokemons.atualizarPokemon);
 rotas.delete("/pokemons/:id", pokemons.excluirPokemon);
 
 rotas.post("/usuarios", usuarios.cadastrarUsuario);
