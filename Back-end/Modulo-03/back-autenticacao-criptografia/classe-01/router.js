@@ -4,7 +4,7 @@ const usuarios = require("./controladores/usuarios");
 
 const rotas = express();
 
-rotas.get("/pokemons", pokemons.listarpokemons);
+rotas.get("/pokemons", pokemons.listarPokemons);
 rotas.get("/pokemons/:id", pokemons.consultarPokemon);
 rotas.post("/pokemons", pokemons.cadastrarPokemon);
 rotas.patch("/pokemons/:id", pokemons.atualizarPokemon);

@@ -2,9 +2,71 @@ const conexao = require("../conexao");
 const jwt = require("jsonwebtoken");
 const jwtSecret = require("../jwt_secret");
 
-const listarpokemons = async (req, res) => {};
+const listarPokemons = async (req, res) => {
+  const { token } = req.body;
 
-const consultarPokemon = async (req, res) => {};
+  if (!token) {
+    return res.status(400).json("O campo token é obrigatório.");
+  }
+
+  try {
+    jwt.verify(token, jwtSecret);
+
+    try {
+      const query =
+        "select a.id, b.nome as usuario, a.nome, a.apelido, a.habilidades, a.imagem  from pokemons a join usuarios b on a.usuario_id = b.id";
+      const pokemons = await conexao.query(query);
+
+      if (pokemons.rowCount === 0) {
+        return res.status(500).json("Não foi possível listar os pokemons.");
+      }
+
+      pokemons.rows.map((poke) => {
+        const habilidadesArray = poke.habilidades.split(",");
+        return (poke.habilidades = habilidadesArray);
+      });
+
+      return res.status(200).json(pokemons.rows);
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
+  } catch (error) {
+    return res.status(400).json("O token fornecido é válido.");
+  }
+};
+
+const consultarPokemon = async (req, res) => {
+  const { token } = req.body;
+  const { id } = req.params;
+
+  if (!token) {
+    return res.status(400).json("O campo token é obrigatório.");
+  }
+
+  try {
+    jwt.verify(token, jwtSecret);
+
+    try {
+      const query = "select * from pokemons where id = $1";
+      const pokemon = await conexao.query(query, [id]);
+
+      if (pokemon.rowCount === 0) {
+        return res.status(500).json("Não foi possível encontrar o pokemon.");
+      }
+
+      pokemon.rows.map((poke) => {
+        const habilidadesArray = poke.habilidades.split(",");
+        return (poke.habilidades = habilidadesArray);
+      });
+
+      return res.status(200).json(pokemon.rows);
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
+  } catch (error) {
+    return res.status(400).json("O token fornecido é válido.");
+  }
+};
 
 const cadastrarPokemon = async (req, res) => {
   const { nome, apelido, habilidades, imagem, token } = req.body;
