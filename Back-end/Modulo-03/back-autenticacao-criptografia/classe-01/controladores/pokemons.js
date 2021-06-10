@@ -124,12 +124,71 @@ const cadastrarPokemon = async (req, res) => {
   }
 };
 
-const atualizarPokemon = async (req, res) => {};
+const atualizarPokemon = async (req, res) => {
+  const { apelido, token } = req.body;
+  const { id } = req.params;
 
-const excluirPokemon = async (req, res) => {};
+  if (!token) {
+    return res.status(400).json("O campo token é obrigatório.");
+  }
+  if (!apelido) {
+    return res.status(400).json("O campo apelido é obrigatório.");
+  }
+
+  try {
+    jwt.verify(token, jwtSecret);
+
+    try {
+      const query = "update pokemons set apelido = $1 where id = $2";
+      const pokemon = await conexao.query(query, [apelido, id]);
+
+      if (pokemon.rowCount === 0) {
+        return res
+          .status(400)
+          .json("Não foi possível atualizar o pokemon. Tente outro id.");
+      }
+
+      return res.status(200).json("Pokemon atualizado com sucesso.");
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
+  } catch (error) {
+    return res.status(400).json("O token fornecido é válido.");
+  }
+};
+
+const excluirPokemon = async (req, res) => {
+  const { token } = req.body;
+  const { id } = req.params;
+
+  if (!token) {
+    return res.status(400).json("O campo token é obrigatório.");
+  }
+
+  try {
+    jwt.verify(token, jwtSecret);
+
+    try {
+      const query = "delete from pokemons where id = $1";
+      const pokemon = await conexao.query(query, [id]);
+
+      if (pokemon.rowCount === 0) {
+        return res
+          .status(400)
+          .json("Não foi possível excluir o pokemon. Tente outro id.");
+      }
+
+      return res.status(200).json("Pokemon excluído com sucesso.");
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
+  } catch (error) {
+    return res.status(400).json("O token fornecido é válido.");
+  }
+};
 
 module.exports = {
-  listarpokemons,
+  listarPokemons,
   consultarPokemon,
   cadastrarPokemon,
   atualizarPokemon,
