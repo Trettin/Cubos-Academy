@@ -93,7 +93,6 @@ const cadastrarPokemon = async (req, res) => {
 
   try {
     const usuario = jwt.verify(token, jwtSecret);
-    console.log(`${usuario.nome} está criando um pokemon.`);
 
     let query =
       "insert into pokemons (usuario_id, nome, habilidades) values ($1, $2, $3)";
