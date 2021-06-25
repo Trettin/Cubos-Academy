@@ -8,8 +8,8 @@ const defaultMovies = [
     starsCount: 9,
     price: 7.5,
     categories: [
-      'horror', 'action'
-    ]
+      'horror', 'action',
+    ],
   },
   {
     title: 'Godzilla vs. Kong',
@@ -18,8 +18,8 @@ const defaultMovies = [
     starsCount: 8.5,
     price: 3,
     categories: [
-      'science fiction', 'action'
-    ]
+      'science fiction', 'action',
+    ],
   },
   {
     title: 'Anônimo',
@@ -28,8 +28,8 @@ const defaultMovies = [
     starsCount: 8.5,
     price: 7,
     categories: [
-      'horror', 'action'
-    ]
+      'horror', 'action',
+    ],
   },
   {
     title: 'Sem Remorso',
@@ -38,8 +38,8 @@ const defaultMovies = [
     starsCount: 8.4,
     price: 5.5,
     categories: [
-      'action'
-    ]
+      'action',
+    ],
   },
   {
     title: 'Demon Slayer',
@@ -48,8 +48,8 @@ const defaultMovies = [
     starsCount: 8.4,
     price: 8,
     categories: [
-      'action'
-    ]
+      'action',
+    ],
   },
   {
     title: 'Cherry',
@@ -58,8 +58,8 @@ const defaultMovies = [
     starsCount: 8.1,
     price: 8.5,
     categories: [
-      'romance'
-    ]
+      'romance',
+    ],
   },
   {
     title: 'Benny Loves You',
@@ -68,9 +68,9 @@ const defaultMovies = [
     starsCount: 7.7,
     price: 6.5,
     categories: [
-      'horror'
-    ]
-  }
-]
+      'horror',
+    ],
+  },
+];
 
 export default defaultMovies;
